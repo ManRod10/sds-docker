@@ -15,4 +15,7 @@ docker build  --force-rm=true --no-cache=true -t colav/sds-backend:latest .
 `
 cd sds-ui
 docker build  --force-rm=true --no-cache=true -t colav/sds-ui:latest .
+docker push colav/sds-ui:latest
 `
+
+

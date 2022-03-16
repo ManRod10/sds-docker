@@ -18,7 +18,13 @@ WORKDIR /sds-ui
 
 RUN npm install
 
-EXPOSE 3000
+ENV LISTEN_PORT=3000
+
+#esto se tiene que cambiar para poder puerto de salida como parametro
+#de momento dejo la variable de ambien en 3000 para que funcione.
+EXPOSE $LISTEN_PORT
+
+ENV SDS_BACKEND_URL=""
 
 #https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#entrypoint
 ENTRYPOINT ["npm"]
