@@ -5,6 +5,16 @@ System to create docker images
 ## Multi-container web app for azure
 https://docs.microsoft.com/en-us/azure/app-service/tutorial-multi-container-app
 
+
+## Building sds-mongodb
+The first step is to copy the dump folder to sds-mongodb
+and run.
+
+`
+cd sds-mongodb 
+docker build  --force-rm=true --no-cache=true -t colav/sds-mongodb:latest .
+`
+
 ## Building sds-backend
 `
 cd sds-backend

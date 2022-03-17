@@ -16,4 +16,4 @@ EXPOSE 8080
 
 #https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#entrypoint
 ENTRYPOINT ["sds_server"]
-CMD ["--db",$MONGODB_IP]
+CMD ["--db_ip",$MONGODB_IP]
