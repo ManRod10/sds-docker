@@ -18,7 +18,7 @@ WORKDIR /sds-ui
 RUN npm install
 
 #
-RUN REACT_APP_API_URL=/api npm run build
+RUN REACT_APP_API_URL=/sds_api npm run build
 
 RUN cp -fr build/* /var/www/html/
 
