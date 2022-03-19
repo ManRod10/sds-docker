@@ -9,6 +9,8 @@ services:
      ports:
        - "3000:80"
      restart: always
+#     mem_reservation: 1024M
+#     cpuset: "0-2"
      environment:
        #REACT_APP_API_URL: sds_backend
        SDS_PROXY_BACKEND_HOST: sds_frontend
@@ -18,7 +20,7 @@ services:
             resources:
                 limits:
                   cpus: '2.0'
-                  memory: 2048M
+                  memory: 8192M
      links:
        - sds_backend       
 
@@ -30,13 +32,15 @@ services:
      ports:
        - "8080:8080"
      restart: always
+#     mem_reservation: 1024M
+#     cpuset: "0-2"
      environment:
        MONGODB_IP: sds_mongodb
      deploy:
             resources:
                 limits:
                   cpus: '2.0'
-                  memory: 2048M
+                  memory: 8192M
      links:
        - sds_mongodb
     
@@ -46,10 +50,10 @@ services:
      ports:
        - "27017:27017"
      restart: always
-     mem_reservation: 500M
-     cpuset: "0-2"     
+ #    mem_reservation: 2048M
+ #    cpuset: "0-2"
      deploy:
             resources:
                 limits:
                   cpus: '2.0'
-                  memory: 2048M
+                  memory: 8192M
