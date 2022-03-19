@@ -13,12 +13,14 @@ and run.
 `
 cd sds-mongodb 
 docker build  --force-rm=true --no-cache=true -t colav/sds-mongodb:latest .
+docker push colav/sds-mongodb:latest
 `
 
 ## Building sds-backend
 `
 cd sds-backend
 docker build  --force-rm=true --no-cache=true -t colav/sds-backend:latest .
+docker push colav/sds-backend:latest
 `
 
 ## Building sds-ui

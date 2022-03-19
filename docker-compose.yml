@@ -1,28 +1,53 @@
 version: '3.3'
 
 services:
-   mongodb:
-     image: colav/sds-mongodb:latest
-     ports:
-       - "27017:27017"
-     restart: always
-
-   backend:
-     depends_on:
-       - mongodb
-     image: colav/sds-backend:latest
-     ports:
-       - "8080:8080"
-     restart: always
-     environment:
-       MONGODB_IP: mongodb
-
-   frontend:
-     depends_on:
-       - backend
+   sds_frontend:
      image: colav/sds-ui:latest
+     container_name: sds_frontend
+#     depends_on:
+#       - sds_backend
      ports:
        - "3000:80"
      restart: always
      environment:
-       BACKEND_URL: backend:8080
+#       REACT_APP_API_URL: "http://sds_backend:8080"
+       REACT_APP_API_URL: "http://192.168.176.3:8080"
+     deploy:
+            resources:
+                limits:
+                  cpus: '2.0'
+                  memory: 2048M
+     links:
+       - sds_backend       
+
+   sds_backend:
+     image: colav/sds-backend:latest
+     container_name: sds_backend
+#     depends_on:
+#       - sds_mongodb
+     ports:
+       - "8080:8080"
+     restart: always
+     environment:
+       MONGODB_IP: sds_mongodb
+     deploy:
+            resources:
+                limits:
+                  cpus: '2.0'
+                  memory: 2048M
+     links:
+       - sds_mongodb
+    
+   sds_mongodb:
+     image: colav/sds-mongodb:latest
+     container_name: sds_mongodb
+     ports:
+       - "27017:27017"
+     restart: always
+     mem_reservation: 1500M
+     cpuset: "0-2"     
+     deploy:
+            resources:
+                limits:
+                  cpus: '2.0'
+                  memory: 2048M

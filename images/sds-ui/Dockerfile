@@ -7,12 +7,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y  install curl git
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y  install nodejs
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install iputils-ping
 
 RUN apt-get clean
 
 WORKDIR /
 
-RUN git clone -b develop https://github.com/colav/sds-ui
+RUN git clone -b develop-docker https://github.com/colav/sds-ui
 
 WORKDIR /sds-ui
 
