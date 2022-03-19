@@ -15,6 +15,8 @@ services:
        #REACT_APP_API_URL: sds_backend
        SDS_PROXY_BACKEND_HOST: sds_frontend
        SDS_PROXY_BACKEND_PORT: 80
+       PORT: 443
+       HTTPS: "true"
 #       REACT_APP_API_URL: "http://192.168.176.3:8080"
      deploy:
             resources:

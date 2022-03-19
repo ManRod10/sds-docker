@@ -19,7 +19,7 @@ RUN a2enmod proxy
 RUN a2enmod proxy_http
 RUN a2enmod proxy_balancer
 RUN a2enmod lbmethod_byrequests
-
+RUN a2dismod ssl
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 #RUN service apache2 start
