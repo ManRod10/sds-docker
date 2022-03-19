@@ -8,8 +8,21 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y  install nodejs
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install iputils-ping
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y  install apache2
 
 RUN apt-get clean
+
+
+RUN service apache2 start
+
+RUN a2enmod proxy
+RUN a2enmod proxy_http
+RUN a2enmod proxy_balancer
+RUN a2enmod lbmethod_byrequests
+
+COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
+
+#RUN service apache2 start
 
 WORKDIR /
 
@@ -26,5 +39,7 @@ ENV LISTEN_PORT=3000
 EXPOSE $LISTEN_PORT
 
 #https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#entrypoint
-ENTRYPOINT ["npm"]
-CMD ["start"]
+#ENTRYPOINT ["npm"]
+#CMD ["start"]
+COPY start.sh /sds-ui/start.sh
+CMD ./start.sh
