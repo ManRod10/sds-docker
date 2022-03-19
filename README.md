@@ -19,3 +19,10 @@ docker-compose up
 Install azure cli
 * https://docs.microsoft.com/fr-fr/cli/azure/install-azure-cli-linux?pivots=apt
 
+`
+az appservice plan create --name sdsAppServicePlan --resource-group sdsResourceGroup --sku B2 --is-linux
+`
+
+`
+
+`
