@@ -48,10 +48,8 @@ EXPOSE 443
 EXPOSE 80
 EXPOSE 22
 
-#https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#entrypoint
-#ENTRYPOINT ["npm"]
-#CMD ["start"]
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY sshd_config /etc/ssh/sshd_config
+COPY check_backend /check_backend
 COPY start.sh /start.sh
 CMD ./start.sh
