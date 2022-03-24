@@ -10,16 +10,15 @@ RUN apt-get clean
 
 RUN npm install -g apidoc@0.29.0
 
-#RUN pip install git+https://github.com/colav/sds-backend@develop
-RUN pip install git+https://github.com/grupocolav/sds-backend@develop 
-
 WORKDIR /
 
-RUN git clone -b develop https://github.com/grupocolav/sds-backend
+RUN git clone -b main https://github.com/colav/sds-backend
 
 WORKDIR /sds-backend
 
 RUN pip install .
+
+RUN pip install pymongo==3.7.0
 
 EXPOSE 8080
 

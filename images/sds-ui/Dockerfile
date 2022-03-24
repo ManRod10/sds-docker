@@ -11,7 +11,7 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y  install nodejs
 WORKDIR /
 
-RUN git clone -b develop-docker https://github.com/colav/sds-ui
+RUN git clone -b main https://github.com/colav/sds-ui
 
 WORKDIR /sds-ui
 
