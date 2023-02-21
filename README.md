@@ -21,7 +21,7 @@ Run in the folder `sds-docker`
 docker-compose up
 ``` 
 
-And open in your browser: [http://localhost](http://localhost). The full working application would appears there.
+And open in your browser the link: [http://localhost](http://localhost). The full working application would appears directly there.
 
 
 # Azure Deploy
