@@ -11,7 +11,7 @@ To test the system package locally, docker and docker-compose is required.
 * https://docs.docker.com/engine/install/ubuntu/
 * Install `docker-compose`:  
 ```bash
-apt install docker-compose
+      apt install docker-compose
 ```
 * https://docs.docker.com/engine/install/linux-postinstall/
 
