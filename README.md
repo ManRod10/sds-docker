@@ -9,14 +9,16 @@ Take a look at README.md at folder images.
 # Testing
 To test the system package locally, docker and docker-compose is required.
 * https://docs.docker.com/engine/install/ubuntu/
-* docker-compse `pip install docker-compose`
+* docker-compse:  `apt install docker-compose`
 * https://docs.docker.com/engine/install/linux-postinstall/
 
-Run in the folder sds-docker
+Run in the folder `sds-docker`
 
-`
+```bash
 docker-compose up
-`
+``` 
+
+And open in your browser: [http://localhost](http://localhost). The full working application would appears there.
 
 
 # Azure Deploy
