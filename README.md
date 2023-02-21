@@ -58,3 +58,10 @@ az webapp create --resource-group RG-AEU-SDS-QA-OBSE --plan sdsAppServicePlan --
 
 It takes a while starting the service in azure,
 you can check at https://sds-investigacion.azurewebsites.net/app
+
+# Appendix
+Some docker commands:
+* Be sure that the service is running → `service docker start`
+* Shut down all the docker services before a new `docker-compose up` →  docker-compose down 
+* List images → `docker images` 
+* Delete image → `docker image rm [IMAGE ID]`
