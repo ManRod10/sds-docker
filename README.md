@@ -23,6 +23,8 @@ docker-compose up
 
 And open in your browser the link: [http://localhost](http://localhost). The full working application would appears directly there.
 
+# Microservices architecture
+![img](./img/arch.png)
 
 # Azure Deploy
 Install azure cli
