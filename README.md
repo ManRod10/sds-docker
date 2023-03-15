@@ -26,7 +26,7 @@ And open in your browser the link: [http://localhost](http://localhost). The ful
 # Microservices architecture
 ![img](./img/arch.png)
 
-An architecture if virtualization based on container was defined, where each module will be an independent container deployed as a multicontainer webapp in the Azure cloud.
+An architecture if virtualization based on containers was defined, where each module will be an independent container deployed as a multicontainer webapp in the Azure cloud.
 
 # Azure Deploy
 Install azure cli
