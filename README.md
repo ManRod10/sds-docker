@@ -8,7 +8,7 @@ Take a look at README.md at folder images.
 
 # Testing
 To test the system package locally, docker and docker-compose is required.
-* https://docs.docker.com/engine/install/ubuntu/
+* https://docs.docker.com/engine/install/ubuntu/ (or https://docs.docker.com/engine/install/debian/, etc)
 * Install `docker-compose`:  
 ```bash
       apt install docker-compose
